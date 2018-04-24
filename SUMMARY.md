@@ -12,4 +12,6 @@
   * [Ruby Basics](ruby-on-rails/ruby-basics.md)
   * [Rails Basics](ruby-on-rails/rails-basics.md)
   * [Active Record](ruby-on-rails/active-record.md)
+* [SQL](sql.md)
+  * Basics
 
