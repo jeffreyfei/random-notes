@@ -7,4 +7,5 @@
   * [Webscale](golang/webscale.md)
 * [ML Related](ml.md)
   * [Python Basics](ml/python-basics.md)
+  * [NLP](ml/nlp.md)
 
