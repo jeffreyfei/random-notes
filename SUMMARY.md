@@ -1,6 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
+* [CTCI](ctci.md)
+  * [Solutions](ctci/solutions.md)
 * [Golang](golang.md)
   * [Concurrency](golang/concurrency.md)
   * [Basics](golang/basics.md)
@@ -14,4 +16,6 @@
   * [Active Record](ruby-on-rails/active-record.md)
 * [SQL](sql.md)
   * [Basics](sql/basics.md)
+* [Leet Code](leet-code.md)
+  * [Two Sum](leet-code/two-sum.md)
 
