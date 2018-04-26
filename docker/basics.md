@@ -36,3 +36,11 @@
 - `docker rm <CONTAINER>`
     - Removes the container
     - Stopped container will continue to exist until you explicitly removes them
+    
+### Networking between containers
+- You can specify which port to expose in a container using the `-p <INSIDE>:<OUTSIDE>` flag with `docker run`
+    - The inside port specify the port that's exposed within the container, the outside post specify the exposed port on the host
+    - The OUT port can be omitted to dynamically select the next available port
+    
+    
+- Use `docker port <CONTAINER>` to find out which port is available on a container
