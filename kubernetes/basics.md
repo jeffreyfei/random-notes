@@ -1,4 +1,4 @@
-# Architecture
+# Architecture and Terminologies
 
 ### Terminologies
 
@@ -25,6 +25,7 @@
 * Storage resources
 
 * Has unique network IP
+
 * Governs how the containers should run
 
 * Has multiple states
@@ -48,6 +49,7 @@
 * A new replica set is created everytime a new deployment configuration is applied, which allows support for a roleback mechanism
 
 * Use cases
+
   * **Pod management** - running a replica set runs a number of pods and they can be checked as a single unit
   * **Scaling** - scaling a replica set also scale out the pods
   * **Pause and Resume** - pause deployment to make changes, and resume deployment
@@ -70,6 +72,53 @@
   * Internal - within a cluster
   * External - endpoint available through node IP
   * Load balancer - exposes application to the internet
+
+### Labels
+
+* Key/value pairs attached to objects like pods, services, and deployments
+* For users of Kubernetes to identify attributes for objects
+
+### Selectors
+
+#### Equality-based Selectors
+
+* Has _equa_l or not _equal_ operators
+* Two labels or values of labels should be equal \(or not equal\)
+
+#### Set-based Selectors
+
+* **IN** - whether if the value is within a set of the defined values
+* **NOTIN** - whether a value should not be inside a set of defined values
+* **EXISTS** - whether the label exists or not
+
+### Namespaces
+
+* Allows you to have multiple virtual cluster backed by the same physical cluster
+* Allows teams to access resources with accountibility
+* Great way to divide cluster resources between users
+
+### Kubelet
+
+* The "Kubernetes node agent" that runs on each node
+
+* Roles of Kubelet
+  * Communicate with API servers to see if pods have been assigned to nodes
+  * Executes pod containers via a container engine
+  * Mounts and runs pod volumes and secrets
+  * Executes health checks to identify pod/node status
+
+* Runs the containers according to the Podspec \(a yaml file\)
+  * Ensures that he containers described by the podspecs are running and healthy
+
+### Kube-proxy
+
+* Runs on all worker nodes
+* Reflects services as defined on each node
+* Can do simple network stream of round-robin forwarding across a set of backends
+* Has three modes
+  * Userspace
+  * Iptables
+  * Ipvs
 
 
 
