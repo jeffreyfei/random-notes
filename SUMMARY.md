@@ -20,6 +20,7 @@
   * [Two Sum](leet-code/two-sum.md)
 * [Kubernetes](kubernetes.md)
   * [Architecture](kubernetes/basics.md)
+  * [Useful Commands](kubernetes/useful-commands.md)
 * [Docker](docker.md)
   * [Basic Usage](docker/basics.md)
 
