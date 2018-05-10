@@ -26,4 +26,5 @@
 * [AWS](aws.md)
   * [Basics](basics.md)
   * [VPC](vpc.md)
+  * [EC2](ec2.md)
 
