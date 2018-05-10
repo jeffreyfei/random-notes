@@ -23,6 +23,6 @@
   * [Useful Commands](kubernetes/useful-commands.md)
 * [Docker](docker.md)
   * [Basic Usage](docker/basics.md)
-* AWS
+* [AWS](aws.md)
   * [Basics](basics.md)
 
