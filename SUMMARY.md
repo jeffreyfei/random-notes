@@ -25,4 +25,5 @@
   * [Basic Usage](docker/basics.md)
 * [AWS](aws.md)
   * [Basics](basics.md)
+  * [VPC](vpc.md)
 
