@@ -29,6 +29,7 @@
   * [EC2](ec2.md)
   * [EBS](ebs.md)
   * [AMI](ami.md)
+  * [S3](s3.md)
 * Java
   * [Lambdas](lambdas.md)
 
