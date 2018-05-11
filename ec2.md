@@ -1,5 +1,7 @@
 # Elastic Compute Cloud \(EC2\)
 
+[https://qwiklabs.com/focuses/368?parent=catalog](https://qwiklabs.com/focuses/368?parent=catalog "Qwiklabs")
+
 * provides resizable compute capacity in the cloud
 * Can be accessed through the _Services_ menu
 
@@ -44,10 +46,11 @@
 
 * Tells Auto Scaling when and how to scale
 
-1. **Maintain current instance levels** - periodic health checks; unhealthy instances are replaced
-2. **Manual scaling** - define max/min/desired capacity for the Auto Scaling Group
-3. **Schedule based** - predicable demands; scaling performed automatically as function of time and date
-4. **Demand based** - define parameters \(e.g. CPU utilization rate\) to scale for unknown demands
+* **Maintain current instance levels** - periodic health checks; unhealthy instances are replaced
+
+* **Manual scaling** - define max/min/desired capacity for the Auto Scaling Group
+* **Schedule based** - predicable demands; scaling performed automatically as function of time and date
+* **Demand based** - define parameters \(e.g. CPU utilization rate\) to scale for unknown demands
 
 ### Steps
 
