@@ -1,5 +1,7 @@
 # EBS-backed AMI
 
+[https://qwiklabs.com/focuses/360?parent=catalog](https://qwiklabs.com/focuses/360?parent=catalog)
+
 * Contains all information to boot an Amazon EC2 instance
   * A template for a computer's root volume
   * e.g. Linux, Apache, etc.
