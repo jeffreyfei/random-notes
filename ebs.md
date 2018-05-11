@@ -30,9 +30,16 @@
 * Incremental backups
 * Only the blocks on the device that have changed after your most recent snapshot are saved
 
-1. Click _Create Snapshot_ \(under Actions\)
-2. Configure the snapshot
-3. Confirm and create
+* Click _Create Snapshot_ \(under Actions\)
+
+* Configure the snapshot
+* Confirm and create
+
+#### Restoring a Snapshot
+
+1. Check the snapshot that you want to restore
+2. Select Actions &gt; Create Volume
+3. Configure the new volume
 
 ### Modifying the EBS Volume
 
