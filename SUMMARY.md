@@ -28,6 +28,7 @@
   * [VPC](vpc.md)
   * [EC2](ec2.md)
   * [EBS](ebs.md)
+  * [AMI](ami.md)
 * Java
   * [Lambdas](lambdas.md)
 
