@@ -28,4 +28,6 @@
   * [VPC](vpc.md)
   * [EC2](ec2.md)
   * [EBS](ebs.md)
+* Java
+  * [Lambdas](lambdas.md)
 
