@@ -30,6 +30,7 @@
   * [EBS](ebs.md)
   * [AMI](ami.md)
   * [S3](s3.md)
+  * [ELB](elastic-loading-balancing.md)
 * Java
   * [Lambdas](lambdas.md)
 
