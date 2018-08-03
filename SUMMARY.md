@@ -18,6 +18,7 @@
   * [Basics](sql/basics.md)
 * [Leet Code](leet-code.md)
   * [Two Sum](leet-code/two-sum.md)
+  * [Max profit](leet-code/max-profit.md)
 * [Kubernetes](kubernetes.md)
   * [Architecture](kubernetes/basics.md)
   * [Useful Commands](kubernetes/useful-commands.md)
