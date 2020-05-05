@@ -1,22 +1,23 @@
 # Random Coding Notes
 
-[Golang](golang/golang.md)
-
-[ML Related](ml/ml.md)
-
-[Crack the Coding Interview Notes](ctcl/ctcl.md)
-
-[Docker](docker/docker.md)
-
-[Kubernetes](kubernetes/kubernetes.md)
-
-[Machine Learning Related](ml/ml.md)
-
-[Ruby on Rails](ruby-on-rails/ruby-on-rails.md)
-
-[SQL Related](sql/sql.md)
-
 By: Jeffrey Fei
 
+[AWS](aws/README.md)
 
+[Bash](bash/README.md)
 
+[Golang](golang/README.md)
+
+[ML Related](ml/README.md)
+
+[Crack the Coding Interview Notes](ctcl/README.md)
+
+[Docker](docker/README.md)
+
+[Kubernetes](kubernetes/README.md)
+
+[Machine Learning Related](ml/README.md)
+
+[Ruby on Rails](ruby-on-rails/README.md)
+
+[SQL Related](sql/README.md)
