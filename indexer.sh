@@ -6,6 +6,10 @@ link_md="[%s](%s)"
 
 # Remove old README file and initiate new ones
 for dir in $(find . -type d -name ".git" -prune -o -type d -follow -print); do
+    # Ignore asset directory
+    if [[ $(basename $dir) = "assets" ]]; then
+        continue
+    fi
     readmefile="${dir}/README.md"
     if [[ -f $readmefile ]]; then
         # Delete old readmes
@@ -27,6 +31,10 @@ done
 # Populate new README files
 for path in $(find . -type d -name ".git" -prune -o -type f -follow -print); do
     dir=$(dirname $path)
+    # Ignore asset directory
+    if [[ $(basename $dir) = "asset" ]]; then
+        continue
+    fi
     readmefile="${dir}/README.md"
     file=$(basename $path)
     ext="${file##*.}"
