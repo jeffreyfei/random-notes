@@ -32,7 +32,7 @@ done
 for path in $(find . -type d -name ".git" -prune -o -type f -follow -print); do
     dir=$(dirname $path)
     # Ignore asset directory
-    if [[ $(basename $dir) = "asset" ]]; then
+    if [[ $(basename $dir) = "assets" ]]; then
         continue
     fi
     readmefile="${dir}/README.md"
