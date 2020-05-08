@@ -4,4 +4,4 @@ before_install:
   - git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/noteshare/noteshare.github.io.git ~/website
 
 script:
-  - cd ~/website; ./.deploy.sh
+  - ./.:wqdeploy.sh
