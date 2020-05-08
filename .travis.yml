@@ -1,7 +1,7 @@
 sudo: required
 before_install:
-  - git clone https://github.com/jeffreyfei/random-notes.git
-  - git clone https://github.com/jeffreyfei/md-notebook-gen.git
+  - git clone https://github.com/jeffreyfei/md-notebook-gen.git ~
 
 script:
-  - cd random-notes; ./indexer.sh
+  - ./indexer.sh
+  - cd ~/md-notebook-gen; npm install
