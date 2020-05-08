@@ -1,4 +1,4 @@
-sudo: required
+language: bash
 before_install:
   - git clone https://github.com/jeffreyfei/md-notebook-gen.git ~/md-notebook-gen
   - git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/noteshare/noteshare.github.io.git ~/website
