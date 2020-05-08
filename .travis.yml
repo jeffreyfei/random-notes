@@ -1,7 +1,8 @@
 sudo: required
 before_install:
-  - git clone https://github.com/jeffreyfei/md-notebook-gen.git ~
+  - git clone https://github.com/jeffreyfei/md-notebook-gen.git ~/md-notebook-gen
 
 script:
   - ./indexer.sh
+  - pwd
   - cd ~/md-notebook-gen; npm install
