@@ -2,6 +2,8 @@
 
 `[]` - Group range of acceptable characters e.g. `[A-Z0-9]`
 
+`[^]` - Negation e.g. `[^A-Z]`
+
 
 ## Quantifier Characters
 
@@ -14,6 +16,12 @@
 `+` - Match 1 or more times
 
 `{n}` - Match exactly n characters
+
+`{n,}` - n or more times
+
+`{n, m}` - Between n and m times
+
+`{,m}` - Between 0 and m times
 
 ## Conditional
 
@@ -38,3 +46,7 @@ e.g. `/^pattern$/` - Only match the entire string
 ## Shorthand Code
 
 `\s` - all kinds of whitespace
+
+## Wildcard
+
+`.` - Match any character except for `\n`, (will match `\n` with dotall modifier)
