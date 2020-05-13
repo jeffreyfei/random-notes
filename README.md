@@ -5,6 +5,8 @@
 
 [Golang](Golang/README.md)
 
+[Regex](Regex/README.md)
+
 [Ruby On Rails](Ruby_On_Rails/README.md)
 
 [Bash](Bash/README.md)
