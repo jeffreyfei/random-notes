@@ -1,3 +1,7 @@
+## Source
+
+- Notes taken from the [Linux Systems Programming](https://app.pluralsight.com/library/courses/linux-systems-programming/table-of-contents) course
+
 ## man pages
 
 ```
