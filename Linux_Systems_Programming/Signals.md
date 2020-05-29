@@ -87,3 +87,15 @@ sigprocmask(how, set, oldset)
 
 - set - the set of signals to add/subtract
 - oldset - the previous mask is returned here
+
+## Possible way of signal handling
+
+1. Ignore
+2. Terminate gracefully (include cleanup)
+3. Reconfigure on the fly (e.g. reread a config file)
+4. Report status dynamically
+5. Turn debugging on and off
+6. Implement a timeout
+    - Some system calls never timeout (e.g. read), we can use signals to
+    implement a timeout; need to ensure the system call not restarting after
+    a signal
