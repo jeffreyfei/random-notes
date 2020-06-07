@@ -68,3 +68,23 @@ using the `-f` option in the sed command
 ```bash
 sed -f ntp.sed /etc/ntp.conf # applies ntp.sed on ntp.conf
 ```
+
+## Substitution groups
+
+- Defined by open and close brackets
+- Captured string is represented by \1, \2, \3... in the replacement string
+
+```bash
+sed 's/\([^,]*\)/\U\1'
+```
+
+- This matches everything that's before a comma and convert the string to upper case
+
+## Execute Commands
+
+```bash
+sed 's/^/ls -l/e' list.txt
+```
+
+- Reads from a list of files and list them
+- Realized using `s/<pattern>/<cmd>/e
