@@ -3,10 +3,16 @@
 ### Terminologies
 
 **Nodes** - host that run Kubernetes applications
+    - Runs on individual "servers"
+    - Manages a collection of pods
+
 
 **Pods** - units of deployment
+    - Runs one or more containers
+    - Has it's own IP address
 
 **Containers** - units of packaging
+    - Usually docker
 
 **Replication Controller** - ensures availability and scalability
 
@@ -15,6 +21,8 @@
 **Labels** - key-value pairs for identification
 
 **Services** - collection of pods exposed as an endpoint
+    - Facilitate communcation between pods by having a constant IP address
+    - Identifies which pod belongs to it using labels
 
 ![](/assets/kubearch040730.png)
 
