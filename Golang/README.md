@@ -1,8 +1,8 @@
 # Golang
 
 
-[Webscale](Webscale.md)
+[Basics](Basics.md)
 
 [Concurrency](Concurrency.md)
 
-[Basics](Basics.md)
+[Webscale](Webscale.md)
