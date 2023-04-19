@@ -7,6 +7,11 @@ The most promising solution right now is KVM.
 # KVM Setup Notes
 Instructions: https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-virtualization/
 
+Installation command:
+```
+sudo dnf install @virtualization
+```
+
 # Other Notes
 NUMA - Non-uniform memory access
 - Referring to multi-processor systems whose memory is divided into multiple memory node
