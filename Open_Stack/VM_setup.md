@@ -1,14 +1,29 @@
 # VM Setup
 
-## Sample Setup Command
-
+## Sample Setup Commands
+### Controller
 ```
 sudo virt-install --name open_stack_controller \
 --description 'Controller node for openstack env' \
 --ram 4096 \
 --vcpus 1 \
---disk size=20 \
---os-type linux \
+--disk size=20,path=/var/lib/libvirt/images/open_stack_controller.qcow2 \
+--os-variant centos-stream9 \
+--network bridge=virbr0 \
+--graphics none \
+--location /var/lib/libvirt/isos/CentOS-Stream-9-latest-x86_64-dvd1.iso \
+--extra-args='console=ttyS0'
+```
+
+- Console configuration in **extra-args** is crucial for console access to work from host machine
+
+### Compute
+```
+sudo virt-install --name open_stack_compute \
+--description 'Compute node for openstack env' \
+--ram 2048 \
+--vcpus 1 \
+--disk size=20,path=/var/lib/libvirt/images/open_stack_compute.qcow2 \
 --os-variant centos-stream9 \
 --network bridge=virbr0 \
 --graphics none \
@@ -24,6 +39,8 @@ sudo virsh snapshot-create-as --domain open_stack_controller \
 "Initial centos setup for open stack controller node" \
 --disk-only
 ```
+
+**disk-only** - omits VM state in snapshot creation
 
 ## Reading Materials
 [How to create snapshot in Linux KVM VM/Domain](https://www.cyberciti.biz/faq/how-to-create-create-snapshot-in-linux-kvm-vmdomain/)
