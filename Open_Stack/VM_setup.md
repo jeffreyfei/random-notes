@@ -10,6 +10,7 @@ sudo virt-install --name open_stack_controller \
 --disk size=20,path=/var/lib/libvirt/images/open_stack_controller.qcow2 \
 --os-variant centos-stream9 \
 --network bridge=virbr0 \
+--network bridge=virbr1 \
 --graphics none \
 --location /var/lib/libvirt/isos/CentOS-Stream-9-latest-x86_64-dvd1.iso \
 --extra-args='console=ttyS0'
@@ -83,7 +84,36 @@ Restart DHCP
 sudo virsh net-destroy default && sudo virsh net-start default
 ```
 
+## Network Config on VMs
+Add the following to `/etc/sysconfig/network-scripts/ifcfg-INTERFACE_NAME`
+```
+DEVICE=INTERFACE_NAME
+TYPE=Ethernet
+ONBOOT="yes"
+BOOTPROTO="none"
+```
+
+Add the following host names to `/etc/hosts` depending on your setup
+```
+# controller
+10.0.0.11       controller
+
+# compute1
+10.0.0.31       compute1
+
+# block1
+10.0.0.41       block1
+
+# object1
+10.0.0.51       object1
+
+# object2
+10.0.0.52       object2
+```
+
 ## Reading Materials
 [How to create snapshot in Linux KVM VM/Domain](https://www.cyberciti.biz/faq/how-to-create-create-snapshot-in-linux-kvm-vmdomain/)
 
 [KVM libvirt assign static guest IP addresses using DHCP on the virtual machine](https://www.cyberciti.biz/faq/linux-kvm-libvirt-dnsmasq-dhcp-static-ip-address-configuration-for-guest-os/)
+
+[OpenStack Doc](https://docs.openstack.org/install-guide/environment.html)
