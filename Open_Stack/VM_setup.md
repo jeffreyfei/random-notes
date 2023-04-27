@@ -10,7 +10,6 @@ sudo virt-install --name open_stack_controller \
 --disk size=20,path=/var/lib/libvirt/images/open_stack_controller.qcow2 \
 --os-variant centos-stream9 \
 --network bridge=virbr0 \
---network bridge=virbr1 \
 --graphics none \
 --location /var/lib/libvirt/isos/CentOS-Stream-9-latest-x86_64-dvd1.iso \
 --extra-args='console=ttyS0'
@@ -94,7 +93,7 @@ BOOTPROTO="none"
 ```
 
 Add the following host names to `/etc/hosts` depending on your setup
-```
+```bash
 # controller
 10.0.0.11       controller
 
@@ -111,9 +110,57 @@ Add the following host names to `/etc/hosts` depending on your setup
 10.0.0.52       object2
 ```
 
+## Setup NTP
+Install chrony
+```
+sudo yum install chrony
+```
+
+### Controller
+Add to `/etc/chrony.conf`
+```bash
+# Allow NTP client access from other open stack nodes
+allow 10.0.0.0/24
+```
+
+Add NTP service to firewall
+```
+sudo firewall-cmd --add-service=ntp --permanent
+sudo firewall-cmd --reload
+```
+
+Start chrony service
+```
+systemctl enable chronyd.service
+systemctl start chronyd.service
+```
+
+### Clients (e.g. compute, object storage etc.)
+Comment out the default NTP server pool in `/etc/chrony.conf`. Normall starts with  `pool ...`
+
+Add to `/etc/chrony.conf`
+```bash
+# Set controller as NTP server
+server controller iburst
+```
+
+Start chrony service
+```
+systemctl enable chronyd.service
+systemctl start chronyd.service
+```
+
+### Check NTP connectivity
+```
+chronyc sources
+```
+
+
 ## Reading Materials
 [How to create snapshot in Linux KVM VM/Domain](https://www.cyberciti.biz/faq/how-to-create-create-snapshot-in-linux-kvm-vmdomain/)
 
 [KVM libvirt assign static guest IP addresses using DHCP on the virtual machine](https://www.cyberciti.biz/faq/linux-kvm-libvirt-dnsmasq-dhcp-static-ip-address-configuration-for-guest-os/)
 
 [OpenStack Doc](https://docs.openstack.org/install-guide/environment.html)
+
+[How to configure chrony as an NTP client or server in Linux](https://www.redhat.com/sysadmin/chrony-time-services-linux)
