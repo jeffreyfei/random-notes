@@ -35,8 +35,7 @@ sudo virt-install --name open_stack_compute \
 ```
 sudo virsh snapshot-create-as --domain open_stack_controller \
 --name "init-setup" \
---description \
-"Initial centos setup for open stack controller node" \
+--description "Initial centos setup for open stack controller node" \
 --disk-only
 ```
 
@@ -155,6 +154,27 @@ systemctl start chronyd.service
 chronyc sources
 ```
 
+## Install OpenStack Packages
+Installation release: zed
+```
+sudo yum install centos-release-openstack-zed
+```
+
+```
+sudo yum upgrade
+```
+
+Restart if the upgrade includes a new kernel
+
+Install OpenStack client
+```
+sudo yum install python3-openstackclient
+```
+
+Install openstack-selinux to automatically manage security policies
+```
+sudo yum install openstack-selinux
+```
 
 ## Reading Materials
 [How to create snapshot in Linux KVM VM/Domain](https://www.cyberciti.biz/faq/how-to-create-create-snapshot-in-linux-kvm-vmdomain/)

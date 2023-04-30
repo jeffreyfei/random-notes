@@ -7,3 +7,6 @@
 
 - cinder - block storage
     - volume management
+
+# Reading Materials
+[OpenStack Architecture Design Guide](https://docs.openstack.org/arch-design/)
