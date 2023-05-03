@@ -10,3 +10,5 @@
 
 # Reading Materials
 [OpenStack Architecture Design Guide](https://docs.openstack.org/arch-design/)
+
+[Install OpenStack services](https://docs.openstack.org/install-guide/openstack-services.html)

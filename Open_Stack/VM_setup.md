@@ -1,5 +1,7 @@
 # VM Setup
 
+Covers VM Setup that includes base packages for a generic nodes
+
 ## Sample Setup Commands
 ### Controller
 ```
