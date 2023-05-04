@@ -7,10 +7,4 @@
 
 [Architecture](Architecture.md)
 
-[Identity](Identity.md)
-
-[Imaging](Imaging.md)
-
-[Placement](Placement.md)
-
-[Compute](Compute.md)
+[Compute](Compute/README.md)
