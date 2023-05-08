@@ -98,6 +98,18 @@ export OS_AUTH_URL=http://controller:5000/v3
 export OS_IDENTITY_API_VERSION=3
 ```
 
+## Identity Concepts
+- **Domain** - a high level container for projects, users, and groups. You can set domain level roles which can adminster multiple projects
+
+- **Group** - a collection of users owned by a domain. A group role granted to a project or domain applies to all users in the group. Removing the user will automatically revoke the user's authentication associated with the group
+
+- **Role** - The configuraion of a set of rights and priviledges granted to a user
+    - Identity service provides a user with a token that includes information on a set of roles. The token is intrepreted by other OpenStack services to determine what the user can / cannot perform
+
+- **Project** - a group of zero or more users that owns resources
+    - In Compute a project owns VMs
+    - In Object Storage a project owns containers
+
 # References
 [Identity service overview](https://docs.openstack.org/keystone/yoga/install/get-started-obs.html)
 
@@ -106,3 +118,5 @@ export OS_IDENTITY_API_VERSION=3
 [The pg_hba.conf File](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html)
 
 [Creating User, database, and adding access on PostgreSQL](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e)
+
+[Identity concepts](https://docs.openstack.org/keystone/zed/admin/identity-concepts.html)
