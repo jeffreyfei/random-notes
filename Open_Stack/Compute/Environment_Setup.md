@@ -147,6 +147,7 @@ sudo yum install postgresql-server
 # Install the python postgresql driver
 sudo yum install gcc python3-devel postgresql-devel
 sudo -H pip install pyscopg2
+sudo -H pip install psycopg2-binary
 
 # Initialize and start db
 sudo postgresql-setup --initdb

@@ -30,14 +30,18 @@ keystone=# \password keystone
 
 Grant all access of the `keystone` db to the user `keystone`
 ```
-keystone=# grant all priviledges on database keystone to keystone
+keystone=# GRANT ALL PRIVILEGES ON DATABASE keystone TO keystone;
 ```
 
 Add the following entry to `/var/lib/pgsql/data/pg_hba.conf` to allow access from keystone
 ```
 host    keystone        keystone        controller              md5
 ```
+
 - md5 allows username / password authentication
+
+Restart the DB once updating the DB configs `sudo systemctl restart postgresql.service`
+
 Install packages
 ```
 sudo yum install openstack-keystone httpd mod_wsgi
@@ -45,7 +49,7 @@ sudo yum install openstack-keystone httpd mod_wsgi
 
 Update the following fields in `/etc/keystone/keystone.conf`
 ```
-connection = postgres://keystone:<password>@controller:5432/keystone
+connection = postgresql+psycopg2://keystone:<db_password>@controller:5432/keystone
 
 provider = fernet
 ```
@@ -76,7 +80,7 @@ ServerName controller
 
 Create a symlink for `wsgi-keystone.conf`
 ```
-ln -s /usr/share/keystone/wsgi-keystone.conf /etc/httpd/conf.d/
+sudo ln -s /usr/share/keystone/wsgi-keystone.conf /etc/httpd/conf.d/
 ```
 
 ## Finalize
@@ -96,6 +100,22 @@ export OS_USER_DOMAIN_NAME=Default
 export OS_PROJECT_DOMAIN_NAME=Default
 export OS_AUTH_URL=http://controller:5000/v3
 export OS_IDENTITY_API_VERSION=3
+```
+
+For some reason on our setup (Centos Stream 9) Apache web server (httpd) doesn't work on the default selinux configuration, even when the `openstack-selinux` package was installed. After doing some research, I concluded with the following workaround.
+
+```bash
+sudo ausearch -c 'httpd' --raw | audit2allow -M my-httpd
+
+# Following the instruction on the screen and execute
+sudo semodule -i my-httpd.pp
+```
+
+See the references section for more details on SELinux configuration and troubleshooting.
+
+Check keystone connectivity
+```
+keystone token issue
 ```
 
 ## Identity Concepts
@@ -120,3 +140,7 @@ export OS_IDENTITY_API_VERSION=3
 [Creating User, database, and adding access on PostgreSQL](https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e)
 
 [Identity concepts](https://docs.openstack.org/keystone/zed/admin/identity-concepts.html)
+
+[Chapter 5. Troubleshooting problems related to SELinux](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/troubleshooting-problems-related-to-selinux_using-selinux)
+
+[How to disable SELinux](https://linuxconfig.org/how-to-disable-selinux-on-linux)
