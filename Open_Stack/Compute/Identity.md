@@ -130,6 +130,12 @@ keystone token issue
     - In Compute a project owns VMs
     - In Object Storage a project owns containers
 
+# Verify
+Please follow the instructions in the following link to verify operation of the identity service
+- https://docs.openstack.org/keystone/yoga/install/keystone-users-rdo.html
+
+- https://docs.openstack.org/keystone/yoga/install/keystone-verify-rdo.html
+
 # References
 [Identity service overview](https://docs.openstack.org/keystone/yoga/install/get-started-obs.html)
 
