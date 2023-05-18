@@ -102,6 +102,11 @@ export OS_AUTH_URL=http://controller:5000/v3
 export OS_IDENTITY_API_VERSION=3
 ```
 
+You can make login easier during the development process by saving this file as `admin-openrc` somewhere
+on the controller host and run `. admin-openrc` as needed.
+
+## SE-Linux Debugging with Apache Web Server
+
 For some reason on our setup (Centos Stream 9) Apache web server (httpd) doesn't work on the default selinux configuration, even when the `openstack-selinux` package was installed. After doing some research, I concluded with the following workaround.
 
 ```bash
