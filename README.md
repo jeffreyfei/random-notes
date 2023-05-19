@@ -27,4 +27,4 @@
 
 [SQL](SQL/README.md)
 
-[Open Stack](Open_Stack/README.md)
+[OpenStack](OpenStack/README.md)
