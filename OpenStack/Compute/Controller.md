@@ -229,7 +229,7 @@ By default, the standard configuration does not grant access for apache to execu
 the `/usr/bin/placement-api` script.
 
 To grant the appropriate access to the file, add the following configuration within 
-the <VirtualHost></VirtualHost> block in the file
+the `<VirtualHost></VirtualHost>` block in the file
 `/etc/httpd/conf.d/00-placement-api.conf`
 
 ```xml
@@ -260,3 +260,6 @@ https://storyboard.openstack.org/#!/story/2006905
     openstack-nova-conductor.service \
     openstack-nova-novncproxy.service
 ```
+
+## References
+[Install and configure controller node](https://docs.openstack.org/nova/wallaby/install/controller-install-rdo.html)
