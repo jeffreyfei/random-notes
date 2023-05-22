@@ -179,6 +179,12 @@ sudo -u postgres createdb nova_cell0
 ## Setup MQ
 Install message queue
 
+**Note:** Do not use non-alphanumeric symbols in **RABBIT_PASS** as `transport.py` in
+one of the openstack libs uses the `urlparse` function in `urllib`, which bugs
+out on certain symbols as it treats them as escape characters.
+
+
+
 ``` bash
 sudo yum install rabbitmq-server
 sudo systemctl enable rabbitmq-server.service
@@ -235,4 +241,29 @@ sudo systemctl start etcd
 
 Please configure the following controller based services in the following sequence
 
-1. [Imaging](Imaging.md)
+1. [Imaging](Imaging.md) 
+
+## Potential Bug Findings
+Library in question which contains the potential bug: 
+
+https://github.com/openstack/oslo.messaging/blob/master/oslo_messaging/transport.py
+
+Specifically, the `int(port)` statement on line 519 breaks due to the incorrect
+parsing in the previous lines, causing the `netloc` field in the urllib object
+to be incomplete.
+
+To reproduce, set the rabbitmq password of the openstack user to `XG#8pVUR^wZ3PZ`. 
+
+The parse result of the urllib object is, where the `netloc` field is incorrect
+
+```
+ParseResult(scheme='rabbit', netloc='openstack:XG', path='', params='', query='', fragment='8pVUR^wZ3PZ@controller:5672/')
+```
+
+Whereas the expected result should be
+
+```
+ParseResult(scheme='rabbit', netloc='openstack:XG8pVUR^wZ3PZ@controller:5672/', path='', params='', query='', fragment='')
+```
+This causes the string `XG` to be assigned to the port variable, causing the `int()` function to fail
+
