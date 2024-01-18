@@ -1,8 +1,10 @@
 # Kubernetes
 
 
+[Useful Commands](Useful_Commands.md)
+
 [Basics](Basics.md)
 
 [Pods](Pods.md)
 
-[Useful Commands](Useful_Commands.md)
+[Deployments](Deployments.md)
