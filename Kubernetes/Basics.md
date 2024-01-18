@@ -3,16 +3,18 @@
 ### Terminologies
 
 **Nodes** - host that run Kubernetes applications
-    - Runs on individual "servers"
-    - Manages a collection of pods
+- Manages a collection of pods
+- Runs on individual "servers"
+    - kubelet runs on each node that manages each node and communicates with the master
+    - kubeproxy manages the networking aspect of pods
 
 
 **Pods** - units of deployment
-    - Runs one or more containers
-    - Has it's own IP address
+- Runs one or more containers
+- Has it's own IP address
 
 **Containers** - units of packaging
-    - Usually docker
+- Usually docker
 
 **Replication Controller** - ensures availability and scalability
 
