@@ -1,4 +1,4 @@
-# EBS-backed AMI
+X# EBS-backed AMI
 
 [https://qwiklabs.com/focuses/360?parent=catalog](https://qwiklabs.com/focuses/360?parent=catalog)
 

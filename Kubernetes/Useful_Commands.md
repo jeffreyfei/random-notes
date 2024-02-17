@@ -20,5 +20,30 @@
 
 * Deletes the pods with a given label
 
+### Troubleshooting Pods
+```bash
+# Get pod information in yaml format
+kubectl get pod [pod-name] -o yaml
 
+# Detailed description of a specific pod
+kubectl describe pod [pod-name]
+
+# Connect into the shell of a specific pod
+kubectl exec [pod-name] -it sh
+```
+
+### Log viewing
+```bash
+# Get logs of the running pod
+kubectl logs [pod-name]
+
+# Get logs of a specific container within a running log
+kubectl logs [pod-name] -c [container-name]
+
+# Get logs of a previously running pod (currently not running)
+kubectl logs -p [pod-name]
+
+# Follow the logs of a currently running pod
+kubectl logs -f [pod-name]
+```
 
