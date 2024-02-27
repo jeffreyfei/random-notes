@@ -37,3 +37,29 @@ spec:
     replicas: 3
 ...
 ```
+
+Quickly create a template file from a dry-run command
+
+```
+kubectl create deploy [deployment-name] --image=[image-name]:[tag] --dry-run=client -o yaml > deploy.yaml
+```
+
+Set selector on a resource
+```
+kubectl set selector svc [service-name] 'key=value'
+```
+
+Imparatively scale a deployment
+```
+kubectl scale deploy [deployment-name] --replicas=4
+```
+
+Change the image in a deployment
+```
+kubectl set image deploy [deployment-name] [image-name]
+```
+
+Edit the configuration of a resource
+```
+kubectl edit deploy [deployment-name]
+```
