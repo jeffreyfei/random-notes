@@ -14,6 +14,11 @@ spec:
             tier: frontend
 ...
 ```
+## Key Configurations
+- maxSurge - the maximum number of extra pods allowed during a rolling update with respect to the number of replicas
+    - e.g. if replicas = 2 and maxSurge = 1 then the most pods that we can have during an update is 3
+- maxUnavailable - the max number of pods that can be unavailable during an update with respect to the number of replicas
+    - e.g. if replicas = 2 and maxUnavailable = 1 then the least pods that we can have during an update is 1
 
 ## Commands
 Get deployment alongside their respective labels
@@ -49,11 +54,6 @@ Set selector on a resource
 kubectl set selector svc [service-name] 'key=value'
 ```
 
-Imparatively scale a deployment
-```
-kubectl scale deploy [deployment-name] --replicas=4
-```
-
 Change the image in a deployment
 ```
 kubectl set image deploy [deployment-name] [image-name]
@@ -62,4 +62,16 @@ kubectl set image deploy [deployment-name] [image-name]
 Edit the configuration of a resource
 ```
 kubectl edit deploy [deployment-name]
+```
+
+Create initial deployment and save the configuration of the deployment in the resources annotation
+- This saves a history of the deployment to an annotation section in the output yaml
+```
+kubectl create -f [deployment-file] --save-config
+```
+
+Apply changes to a deployment and record the change to the annotations
+- Note: the `--record` flag is marked as deprecated
+```
+kubectl apply -f [deployment-file] --record=true
 ```
