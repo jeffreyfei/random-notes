@@ -75,3 +75,19 @@ Apply changes to a deployment and record the change to the annotations
 ```
 kubectl apply -f [deployment-file] --record=true
 ```
+
+### Rollout Commands
+
+```bash
+# Check status
+kubectl rollout status -f [deployment-file]
+
+# Get rollout history
+kubectl rollout history 
+
+# Roll back deployment to the previous version
+kubectl rollout undo -f [deployment-file]
+
+# Roll back deployment to the a specific version
+kubectl rollout undo -f [deployment-file] --to-revision=2
+```
