@@ -83,7 +83,8 @@ kubectl apply -f [deployment-file] --record=true
 kubectl rollout status -f [deployment-file]
 
 # Get rollout history
-kubectl rollout history 
+kubectl rollout history -f [deployment-file]
+kubectl rollout history deploy [deploy-name]
 
 # Roll back deployment to the previous version
 kubectl rollout undo -f [deployment-file]

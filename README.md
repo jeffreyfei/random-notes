@@ -28,5 +28,3 @@
 [Ruby On Rails](Ruby_On_Rails/README.md)
 
 [SQL](SQL/README.md)
-
-[node modules](node_modules/README.md)
