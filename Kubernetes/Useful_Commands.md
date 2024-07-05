@@ -47,3 +47,11 @@ kubectl logs -p [pod-name]
 kubectl logs -f [pod-name]
 ```
 
+### Monitoring
+```bash
+# View memory and CPU information
+
+kubectl top nodes
+kubectl top pods -n [namespace]
+```
+
